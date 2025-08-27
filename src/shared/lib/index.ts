@@ -1,1 +1,1 @@
-export * from "./app-kit";
+export * from './stitches';

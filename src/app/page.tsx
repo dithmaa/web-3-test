@@ -1,34 +1,40 @@
 "use client";
 
-import { ConnectButton } from "@/entities/wallet";
+import { ConnectButton, GetBalanceButton } from "@/entities/wallet";
 import { InfoList } from "@/components/InfoList";
 import { ActionButtonList } from "@/components/ActionButtonList";
-import Image from "next/image";
-import ReownLogo from "@/shared/assets/reown.png";
+import { styled } from "@/shared/lib";
+import type * as Stitches from '@stitches/react';
+
+const BaseDiv = styled('div', {});
+
+export const FlexBetween = styled(BaseDiv, {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+});
+
+export const Flex = styled(BaseDiv, {
+  display: "flex",
+  alignItems: "center",
+});
 
 export default function Home() {
   return (
     <div className={"pages"}>
-      <Image src={ReownLogo} alt="Reown" width={150} height={150} priority />
-      <h1>AppKit ethers Next.js App Router Example</h1>
+      <header>
+        <nav>
+          <FlexBetween>
+            <a href="#">Web3 Logo</a>
+            <Flex>
+              <ConnectButton />
+              <GetBalanceButton />
+            </Flex>
+          </FlexBetween>
+        </nav>
+      </header>
 
-      <ConnectButton />
       <ActionButtonList />
-      <div className="advice">
-        <p>
-          This projectId only works on localhost. <br />
-          Go to{" "}
-          <a
-            href="https://cloud.reown.com"
-            target="_blank"
-            className="link-button"
-            rel="Reown Cloud"
-          >
-            Reown Cloud
-          </a>{" "}
-          to get your own.
-        </p>
-      </div>
       <InfoList />
     </div>
   );
