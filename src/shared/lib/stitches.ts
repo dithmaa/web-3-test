@@ -4,9 +4,11 @@ import type * as Stitches from "@stitches/react";
 export const stitchesConfig = createStitches({
   theme: {
     colors: {
-      primary: "#4f46e5",
-      primaryHover: "#4338ca",
+      primary: "#0988F0",
+      primaryHover: "#0e6ebcff",
       white: "#ffffff",
+      text: "#2d3436",
+      gray: "#4b4f50ff",
     },
     space: {
       sm: "8px",

@@ -1,8 +1,6 @@
 "use client";
 
 import { ConnectButton, GetBalanceButton } from "@/entities/wallet";
-import { InfoList } from "@/components/InfoList";
-import { ActionButtonList } from "@/components/ActionButtonList";
 import { styled } from "@/shared/lib";
 
 export const FlexBetween = styled("div", {
@@ -22,25 +20,26 @@ export const Container = styled("div", {
   margin: "0 auto",
 });
 
+export const GrayBgHeader = styled("header", {
+  backgroundColor: "$text",
+});
+
 export default function Home() {
   return (
     <div className={"pages"}>
-      <Container>
-        <header>
+      <GrayBgHeader>
+        <Container>
           <nav>
-            <FlexBetween>
+            <FlexBetween style={{ padding: "20px 0" }}>
               <a href="#">Web3 Logo</a>
-              <Flex>
+              <Flex style={{ gap: "16px" }}>
                 <ConnectButton />
                 <GetBalanceButton />
               </Flex>
             </FlexBetween>
           </nav>
-        </header>
-
-        <ActionButtonList />
-        <InfoList />
-      </Container>
+        </Container>
+      </GrayBgHeader>
     </div>
   );
 }
